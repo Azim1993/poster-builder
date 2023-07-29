@@ -15,9 +15,14 @@ window.addEventListener('load', function() {
         headingPreview.innerText = null
         headingInput.value = null
     })
+    headingInput.addEventListener('keyup', (event) => {
+        headingPreview.innerText = event.target.value
+    })
 
     const imageInputCreateBtn = document.getElementById('poster_image_item_buttom')
     const imageInputSection = document.getElementById('image_input_section')
+    const imageInput = document.getElementById('image_input')
+    const imagePreview = document.getElementById('image_preview')
     const imageRemoveBtn = this.document.getElementById('image_input_remove_button')
 
     imageInputCreateBtn.addEventListener('click', () => {
@@ -27,10 +32,19 @@ window.addEventListener('load', function() {
     imageRemoveBtn.addEventListener('click', () => {
         imageInputSection.classList.add('hidden')
         imageInputCreateBtn.classList.remove('hidden')
+        imagePreview.src = null
+        imageInput.value = null
+        imagePreview.classList.add('hidden')
+    })
+    imageInput.addEventListener('change', (event) => {
+        imagePreview.src = URL.createObjectURL(event.target.files[0])
+        imagePreview.classList.remove('hidden')
     })
 
     const descriptionInputCreateBtn = document.getElementById('poster_description_item_buttom')
     const descriptionInputSection = document.getElementById('description_input_section')
+    const descriptionInput = document.getElementById('description_input')
+    const descriptionPreview = document.getElementById('description_preview')
     const descriptionRemoveBtn = this.document.getElementById('description_input_remove_button')
 
     descriptionInputCreateBtn.addEventListener('click', () => {
@@ -40,9 +54,10 @@ window.addEventListener('load', function() {
     descriptionRemoveBtn.addEventListener('click', () => {
         descriptionInputSection.classList.add('hidden')
         descriptionInputCreateBtn.classList.remove('hidden')
+        descriptionPreview.innerText = null
+        descriptionInput.value = null
     })
-
-    headingInput.addEventListener('keyup', (event) => {
-        headingPreview.innerText = event.target.value
+    descriptionInput.addEventListener('keyup', (event) => {
+        descriptionPreview.innerText = event.target.value
     })
 })

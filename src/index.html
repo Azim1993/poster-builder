@@ -65,7 +65,7 @@
                     </div><!-- /end heading section -->
                     
                     <!-- Poster image section -->
-                    <div id="image_input" class="border border-gray-300 p-4 relative mt-6 rounded-lg hidden">
+                    <div id="image_input_section" class="border border-gray-300 p-4 relative mt-6 rounded-lg hidden">
                         <h4 class="bg-gray-300 rounded-2xl text-sm px-4 py-1 absolute left-4 -top-3.5">Poster Image</h4>
                         <button id="image_input_remove_button" class="bg-white rounded-full absolute w-6 h-6 -right-3  border flex justify-center items-center text-red-500 -top-3">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -73,7 +73,7 @@
                               </svg>                              
                         </button>
                         <div class="flex items-center justify-center w-full">
-                            <label for="file-upload" class="flex flex-col items-center justify-center mt-2 w-full h-48 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                            <label for="image_input" class="flex flex-col items-center justify-center mt-2 w-full h-48 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                 <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                     <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
@@ -81,20 +81,20 @@
                                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                                     <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                 </div>
-                                <input id="file-upload" type="file" class="hidden" />
+                                <input id="image_input" accept="image/*" type="file" class="hidden" />
                             </label>
                         </div>
                     </div><!-- /end poster image section -->
                     
                     <!-- Poster description section -->
-                    <div id="description_input" class="border border-gray-300 p-4 relative mt-6 rounded-lg hidden">
+                    <div id="description_input_section" class="border border-gray-300 p-4 relative mt-6 rounded-lg hidden">
                         <h4 class="bg-gray-300 rounded-2xl text-sm px-4 py-1 absolute left-4 -top-3.5">Description</h4>
                         <button id="description_input_remove_button" class="bg-white rounded-full absolute w-6 h-6 -right-3  border flex justify-center items-center text-red-500 -top-3">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                               </svg>                              
                         </button>
-                        <textarea class="shadow appearance-none border rounded-md w-full py-2 px-3 text-gray-700 my-3 leading-tight focus:outline-none focus:shadow-outline" id="description" placeholder="Please input your description"></textarea>
+                        <textarea id="description_input" class="shadow appearance-none border rounded-md w-full py-2 px-3 text-gray-700 my-3 leading-tight focus:outline-none focus:shadow-outline" placeholder="Please input your description"></textarea>
                     </div><!-- /end poster description section -->
 
                     <div class="">
@@ -119,8 +119,8 @@
                     <div class="px-5 pt-5 pb-5">
                         <div id="preview-section">
                             <h1 id="heading_preview" class="text-5xl"></h1>
-                            <img class="w-full rounded-md my-3" src="./dumy.jpg" alt="poster-image">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum commodi ea beatae quia explicabo ducimus ex aliquam odit rem, laudantium magnam aspernatur at, exercitationem quidem neque cum harum incidunt.</p>
+                            <img id="image_preview" class="w-full rounded-md my-3 hidden" alt="poster-image">
+                            <p id="description_preview"></p>
                         </div>
                         <hr class="mt-3">
                         <div class="mt-4">
