@@ -61,3 +61,15 @@ window.addEventListener('load', function() {
         descriptionPreview.innerText = event.target.value
     })
 })
+
+function adjustHeadingAlignment(position) {
+    const headingPreview = this.document.getElementById('heading_preview')
+    headingPreview.classList.remove('text-left', 'text-right', 'text-center')
+    headingPreview.classList.add(`text-${position}`)
+}
+
+function setHeadingColor(color) {
+    const headingPreview = this.document.getElementById('heading_preview')
+    headingPreview.classList.remove('text-blue-500', 'text-green-500', 'text-gray-900')
+    headingPreview.classList.add(color)
+}
