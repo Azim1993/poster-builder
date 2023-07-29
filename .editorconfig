@@ -1,0 +1,16 @@
+# Indentation style
+[*]
+indent_style = space
+indent_size = 4
+
+# Line endings
+[*.{js,css,scss,html,json}]
+end_of_line = lf
+
+# Trim trailing whitespaces
+[*]
+trim_trailing_whitespace = true
+
+# Ensure a new line at the end of the file
+[*]
+insert_final_newline = true
