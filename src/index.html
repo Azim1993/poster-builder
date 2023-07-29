@@ -21,14 +21,14 @@
                 <div class="px-5">
                     <div class="pt-8"></div>
                     <!-- Heading input section -->
-                    <div id="heading_input" class="border border-gray-300 p-4 relative mt-6 rounded-lg hidden">
+                    <div id="heading_input_section" class="border border-gray-300 p-4 relative mt-6 rounded-lg hidden">
                         <h4 class="bg-gray-300 rounded-2xl text-sm px-4 py-1 absolute left-4 -top-3.5">Heading</h4>
                         <button id="heading_input_remove_button" class="bg-white rounded-full absolute w-6 h-6 -right-3  border flex justify-center items-center text-red-500 -top-3">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                               </svg>                              
                         </button>
-                        <input class="shadow appearance-none border rounded-md w-full py-2 px-3 text-gray-700 my-3 leading-tight focus:outline-none focus:shadow-outline" id="heading" type="text" placeholder="Please input your heading">
+                        <input id="heading_input" class="shadow appearance-none border rounded-md w-full py-2 px-3 text-gray-700 my-3 leading-tight focus:outline-none focus:shadow-outline" id="heading" type="text" placeholder="Please input your heading">
                         <div class="flex justify-between">
                             <div class="inline-flex rounded-md shadow-sm" role="group">
                                 <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 flex items-center">
@@ -65,9 +65,9 @@
                     </div><!-- /end heading section -->
                     
                     <!-- Poster image section -->
-                    <div class="border border-gray-300 p-4 relative mt-6 rounded-lg">
+                    <div id="image_input" class="border border-gray-300 p-4 relative mt-6 rounded-lg hidden">
                         <h4 class="bg-gray-300 rounded-2xl text-sm px-4 py-1 absolute left-4 -top-3.5">Poster Image</h4>
-                        <button class="bg-white rounded-full absolute w-6 h-6 -right-3  border flex justify-center items-center text-red-500 -top-3">
+                        <button id="image_input_remove_button" class="bg-white rounded-full absolute w-6 h-6 -right-3  border flex justify-center items-center text-red-500 -top-3">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                               </svg>                              
@@ -87,9 +87,9 @@
                     </div><!-- /end poster image section -->
                     
                     <!-- Poster description section -->
-                    <div class="border border-gray-300 p-4 relative mt-6 rounded-lg">
+                    <div id="description_input" class="border border-gray-300 p-4 relative mt-6 rounded-lg hidden">
                         <h4 class="bg-gray-300 rounded-2xl text-sm px-4 py-1 absolute left-4 -top-3.5">Description</h4>
-                        <button class="bg-white rounded-full absolute w-6 h-6 -right-3  border flex justify-center items-center text-red-500 -top-3">
+                        <button id="description_input_remove_button" class="bg-white rounded-full absolute w-6 h-6 -right-3  border flex justify-center items-center text-red-500 -top-3">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                               </svg>                              
@@ -101,8 +101,8 @@
                         <h2 class="w-full text-center font-bold text-3xl py-2">Items</h2>
                         <div class="grid gap-4 grid-cols-3">
                             <button id="poster_heading_item_buttom" class="border rounded-lg bg-yellow-300 py-3 text-center text-yellow-700" type="button">Heading</button>
-                            <button class="border rounded-lg bg-green-300 py-3 text-center text-green-700" type="button">Images</button>
-                            <button class="border rounded-lg bg-blue-300 py-3 text-center text-blue-700" type="button">Descriptions</button>
+                            <button id="poster_image_item_buttom" class="border rounded-lg bg-green-300 py-3 text-center text-green-700" type="button">Images</button>
+                            <button id="poster_description_item_buttom" class="border rounded-lg bg-blue-300 py-3 text-center text-blue-700" type="button">Descriptions</button>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                     </h2>
                     <div class="px-5 pt-5 pb-5">
                         <div id="preview-section">
-                            <h1 class="text-5xl">Poster Header</h1>
+                            <h1 id="heading_preview" class="text-5xl"></h1>
                             <img class="w-full rounded-md my-3" src="./dumy.jpg" alt="poster-image">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum commodi ea beatae quia explicabo ducimus ex aliquam odit rem, laudantium magnam aspernatur at, exercitationem quidem neque cum harum incidunt.</p>
                         </div>
