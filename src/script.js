@@ -60,6 +60,11 @@ window.addEventListener('load', function() {
     descriptionInput.addEventListener('keyup', (event) => {
         descriptionPreview.innerText = event.target.value
     })
+    
+    this.document.getElementById('download-button').addEventListener('click', (event) => {
+        event.preventDefault()
+        downloadHTMLSectionAsImage()
+    })
 })
 
 function adjustHeadingAlignment(position) {
@@ -73,3 +78,43 @@ function setHeadingColor(color) {
     headingPreview.classList.remove('text-blue-500', 'text-green-500', 'text-gray-900')
     headingPreview.classList.add(color)
 }
+
+
+function downloadHTMLSectionAsImage() {
+    const section = document.getElementById('preview-section');
+
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = section.offsetWidth;
+    canvas.height = section.offsetHeight;
+    context.fillStyle = '#ffffff'
+    const htmlContent = section.innerHTML;
+    
+    // Create a new SVG element
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svg.setAttribute('width', canvas.width);
+    svg.setAttribute('height', canvas.height);
+    const foreignObject = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
+    foreignObject.setAttribute('width', '100%');
+    foreignObject.setAttribute('height', '100%');
+    svg.appendChild(foreignObject);
+    foreignObject.innerHTML = htmlContent;
+    const svgString = new XMLSerializer().serializeToString(svg);
+    const dataURL = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgString);
+    
+    // Create a new image and draw it on the canvas
+    const img = new Image();
+    img.onload = function () {
+        context.drawImage(img, 0, 0);
+        console.log('jjj')
+        const downloadLink = document.createElement('a');
+        downloadLink.href = canvas.toDataURL('image/png');
+        downloadLink.download = 'download.png';
+        downloadLink.click();
+    };
+    img.src = dataURL;
+}
+  
+
+  
