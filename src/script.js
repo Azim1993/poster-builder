@@ -107,7 +107,6 @@ function downloadHTMLSectionAsImage() {
     const img = new Image();
     img.onload = function () {
         context.drawImage(img, 0, 0);
-        console.log('jjj')
         const downloadLink = document.createElement('a');
         downloadLink.href = canvas.toDataURL('image/png');
         downloadLink.download = 'download.png';
